@@ -25,4 +25,34 @@ const totalNewAvailableBlance = addAmount + AvailableBlance;
 console.log(AvailableBlance)
 document.getElementById('Available-blance').innerText = totalNewAvailableBlance;
 
+
+
+})
+
+//cashout money feature
+const withDrawMoney = document.getElementById('withdrawmoney')
+withDrawMoney.addEventListener('click', (e) => {
+  e.preventDefault();
+  const withdrawAmount = parseInt(document.getElementById('withdraw-amount').value);
+
+  const AvailableBlance =parseInt(document.getElementById('Available-blance').innerText);
+
+  const totalNewAvailableBlance = AvailableBlance - withdrawAmount;
+
+  document.getElementById('Available-blance').innerText = totalNewAvailableBlance;
+})
+
+// toggling feature
+
+const addButton = document.getElementById('addButton')
+
+addButton.addEventListener('click', () => {
+  document.getElementById('cash-out-parent').style.display = 'none';
+  document.getElementById('add-money-parent').style.display = 'flex';
+})
+const cashoutButton = document.getElementById('cashoutButton')
+
+cashoutButton.addEventListener('click', () => {
+  document.getElementById('add-money-parent').style.display = 'none';
+  document.getElementById('cash-out-parent').style.display = 'block';
 })
