@@ -65,22 +65,137 @@ withDrawMoney.addEventListener('click', (e) => {
 
 });
 
-// toggling feature
-
-const addButton = document.getElementById('addButton');
-
-addButton.addEventListener('click', () => {
-  document.getElementById('cash-out-parent').style.display = 'none';
-  document.getElementById('add-money-parent').style.display = 'flex';
-});
-const cashoutButton = document.getElementById('cashoutButton');
-
-cashoutButton.addEventListener('click', () => {
-  document.getElementById('add-money-parent').style.display = 'none';
-  document.getElementById('cash-out-parent').style.display = 'block';
-});
-
+// log out button
 const logOutBtn = document.getElementById('logoutbtn');
 logOutBtn.addEventListener('click', () => {
   window.location.href = './index.html';
 });
+
+
+
+// function to toggling
+
+function handelToggle(id){
+  const froms = document.getElementsByClassName('form');
+  for(const form of froms){
+    form.style.display = 'none'
+  }
+
+  document.getElementById(id).style.display = 'block'
+
+}
+
+// / toggling feature
+//!1
+const addButton = document.getElementById('addButton');
+addButton.addEventListener('click', () => {
+  handelToggle('add-money-parent');
+
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]')
+    btn.classList.add('border-gray-300')
+  }
+
+  document.getElementById('addButton').classList.remove('border-gray-300')
+document.getElementById('addButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+});
+
+
+//!2
+const cashoutButton = document.getElementById('cashoutButton');
+cashoutButton.addEventListener('click', () => {
+  handelToggle('cash-out-parent')
+
+  
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]', 'bg-[#0874f20d]')
+     btn.classList.add('border-gray-300');
+  }
+  document.getElementById('cashoutButton').classList.remove('border-gray-300')
+document.getElementById('cashoutButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+});
+
+
+//!3
+const TransferButton = document.getElementById('TransferButton')
+TransferButton.addEventListener('click', () => {
+  handelToggle('Transfer-parent')
+
+  
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]', 'bg-[#0874f20d]')
+     btn.classList.add('border-gray-300');
+  }
+  document.getElementById('TransferButton').classList.remove('border-gray-300')
+document.getElementById('TransferButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+})
+
+//!4
+const getbonusButton = document.getElementById('getbonusButton')
+getbonusButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  handelToggle('getbonus-parent')
+
+  
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]', 'bg-[#0874f20d]')
+     btn.classList.add('border-gray-300');
+  }
+  document.getElementById('getbonusButton').classList.remove('border-gray-300')
+document.getElementById('getbonusButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+
+})
+
+//!5
+const paybillButton  = document.getElementById('paybillButton')
+paybillButton.addEventListener('click', () => {
+  handelToggle('paybill-parent')
+    
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+      btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+     btn.classList.add('border-gray-300');
+  }
+  document.getElementById('paybillButton').classList.remove('border-gray-300')
+document.getElementById('paybillButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]', 'text-[#0874f2]')
+})
+
+//!6
+
+const transactionButton = document.getElementById('transactionButton')
+transactionButton.addEventListener('click', () => {
+  handelToggle('transaction-parent')
+
+    
+  const frombtns = document.getElementsByClassName('frombtn')
+
+  for(const btn of frombtns){
+    btn.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]')
+     btn.classList.add('border-gray-300');
+  }
+  document.getElementById('transactionButton').classList.remove('border-gray-300')
+document.getElementById('transactionButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
+})
+
+// view all
+const viewallbtn = document.querySelector('.viewallbtn')
+
+viewallbtn.addEventListener('click', () => {
+  const views = document.querySelectorAll('.view')
+  for(const view of views){
+view.classList.toggle('hidden');
+  }
+
+})
+
+
+
