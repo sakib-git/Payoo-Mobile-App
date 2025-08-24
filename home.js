@@ -166,7 +166,7 @@ paybillButton.addEventListener('click', () => {
      btn.classList.add('border-gray-300');
   }
   document.getElementById('paybillButton').classList.remove('border-gray-300')
-document.getElementById('paybillButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]', 'text-[#0874f2]')
+document.getElementById('paybillButton').classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
 })
 
 //!6
